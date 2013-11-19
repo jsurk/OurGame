@@ -6,6 +6,10 @@
  */
 #include "Player.h"
 #include "Utils.h"
+#include "Projectiles.h"
+
+USING_NS_CC;
+int INIT_MAX_ARROWS = 3;
 
 bool Player::init()
 {
@@ -16,14 +20,14 @@ bool Player::init()
 	return true;
 }
 
-Player* Player::spriteWithFile(const char *pszFileName)
+Player* Player::spriteWithFile(const char *fileName)
 {
     Player *p = new Player();
-    if (p && p->initWithFile(pszFileName))
+    if (p && p->initWithFile(fileName))
     {
     	p->column = TOTAL_COLUMNS / 2 + 1;
-    	auto bb = this->getBoundingBox();
-
+    	p->maxArrows = INIT_MAX_ARROWS;
+    	p->arrows = Array::create();
         p->autorelease();
         return p;
     }
@@ -36,13 +40,20 @@ Player* Player::spriteWithFile(const char *pszFileName)
 // Handles what happens when the Player sprite is tapped
 void Player::wasTapped()
 {
-
+	log("tapped");
+	if (this->arrows->count() < this->maxArrows) {
+		auto arr = Sprite::create("arrow.png");
+//		a->setPosition(this->getPosition());
+//		Utils::layerWithTag(TAG_GAME_LAYER)->addChild(a, 0);
+//		this->arrows->addObject(a);
+//		auto act = MoveTo::create(Projectiles::playerArrowSpeed(), Point(a->getPositionX(), 980));
+	}
 }
 
 // Moves the player left
 void Player::moveLeft()
 {
-	if (column > 0) {
+	if (column > 2) {
 		column--;
 		this->setPositionX(Utils::convertX(column));
 	}
@@ -51,7 +62,7 @@ void Player::moveLeft()
 // Moves the player right
 void Player::moveRight()
 {
-	if (column < 9) {
+	if (column < 8) {
 		column++;
 		this->setPositionX(Utils::convertX(column));
 	}

@@ -10,6 +10,7 @@
 
 #include "cocos2d.h"
 #include "Player.h"
+#include "Projectiles.h"
 using namespace cocos2d;
 
 class Game : public cocos2d::Layer

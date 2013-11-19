@@ -6,7 +6,6 @@
  */
 
 #include "Game.h"
-#include "Player.h"
 #include "Utils.h"
 #include "Constants.h"
 #include "HUD.h"
@@ -72,22 +71,13 @@ void Game::tick(float dt)
 void Game::onTouchesBegan(const std::vector<Touch*> &touches, Event * pEvent)
 {
 	auto location = touches.front()->getLocation();
+
 	// Checks if the tap was within the player area, then determines where in the area it was
-	// Currently slightly inefficient. If more checks within the playerArea are not added I
-	// will alter.
-	if (player->getBoundingBox().containsPoint(location)) {
-		log("Player tapped");
-		player->wasTapped();
-	}
 	if (location.y <= 240) {
-		log("touched player area");
-	}
-	if (Utils::playerArea()->containsPoint(location)) {
-		log("Touched player area");
 		if (player->getBoundingBox().containsPoint(location)) {
 			player->wasTapped();
 		}
-		else if (location.x > Utils::playerArea()->getMaxX()) {
+		else if (player->getBoundingBox().getMaxX() < location.x) {
 			player->moveRight();
 		}
 		else {

@@ -215,7 +215,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/Utils.o: \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/support/component/CCComponentContainer.h \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/include/CCDeprecated.h \
  jni/../../Classes/HUD.h jni/../../Classes/Game.h \
- jni/../../Classes/Player.h jni/../../Classes/Constants.h
+ jni/../../Classes/Player.h jni/../../Classes/Constants.h \
+ jni/../../Classes/Projectiles.h
 
 jni/../../Classes/Utils.h:
 
@@ -654,3 +655,5 @@ jni/../../Classes/Game.h:
 jni/../../Classes/Player.h:
 
 jni/../../Classes/Constants.h:
+
+jni/../../Classes/Projectiles.h:
