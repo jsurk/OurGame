@@ -214,7 +214,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/AppDelegate.o: \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/support/component/CCComponent.h \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/support/component/CCComponentContainer.h \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/include/CCDeprecated.h \
- jni/../../Classes/HelloWorldScene.h
+ jni/../../Classes/Game.h jni/../../Classes/Player.h \
+ jni/../../Classes/Constants.h
 
 jni/../../Classes/AppDelegate.h:
 
@@ -646,4 +647,8 @@ jni/../../Classes/AppDelegate.h:
 
 /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/include/CCDeprecated.h:
 
-jni/../../Classes/HelloWorldScene.h:
+jni/../../Classes/Game.h:
+
+jni/../../Classes/Player.h:
+
+jni/../../Classes/Constants.h:

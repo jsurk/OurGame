@@ -7,6 +7,8 @@
 
 #include "Utils.h"
 
+Rect* playerArea = new Rect(0, 0, 540, 240);
+
 // Returns the current Game layer
 Game* Utils::gameLayer()
 {
@@ -16,7 +18,7 @@ Game* Utils::gameLayer()
 // Returns the current HUD layer
 HUD* Utils::hudLayer()
 {
-	return (HUD*) Utils::layerWithTag(TAG_HUD_LAYER);
+	return (HUD*) Utils::layerWithTag(TAG_HUD);
 }
 
 // Returns the layer with the given tag
@@ -27,13 +29,13 @@ Layer* Utils::layerWithTag(int tag)
 		auto *layer = (Layer *) sc->getChildByTag(tag);
 		return layer;
 	}
-	return null;
+	return NULL;
 }
 
 // Returns the screen size
 Size Utils::getSize()
 {
-	return Director::getInstance()->getVisibleSize();
+	return Director::getInstance()->getWinSize();
 }
 
 // Scales a sprite based on the size of the screen
@@ -49,5 +51,11 @@ void Utils::scaleSprite(Sprite* sprite)
 int Utils::convertX(int x)
 {
 	int rX = Utils::getSize().width / 9;
-	return x * rX;
+	return ((x - .5) * rX);
+}
+
+// Returns the playerArea
+Rect* Utils::playerArea()
+{
+	return (Rect *) playerArea;
 }

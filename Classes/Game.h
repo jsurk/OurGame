@@ -9,12 +9,14 @@
 #define GAME_H_
 
 #include "cocos2d.h"
+#include "Player.h"
 using namespace cocos2d;
 
-class HelloWorld : public cocos2d::Layer
+class Game : public cocos2d::Layer
 {
 private:
 	float totalTime;
+	Player* player;
 
 public:
     // Creates the scene

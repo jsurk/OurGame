@@ -10,16 +10,17 @@
 
 #include "cocos2d.h"
 #include "Constants.h"
+using namespace cocos2d;
 
-class Player::Sprite
+class Player : public Sprite
 {
 private:
-	// Area at the bottom of the screen where the plaer is contained
-	Rect* playerArea;
 
 public:
 	int column, maxArrows;
 	virtual bool init();
+
+	Player* spriteWithFile(const char *pszFileName);
 
 	// Called when the player is tapped
 	void wasTapped();
@@ -27,8 +28,6 @@ public:
 	void moveLeft();
 	// Moves the player right
 	void moveRight();
-	// Returns the player area
-	Rect* getPlayerArea;
 
 	CREATE_FUNC(Player);
 };

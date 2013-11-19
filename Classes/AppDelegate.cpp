@@ -11,12 +11,19 @@ AppDelegate::~AppDelegate()
 {
 }
 
+
+
 bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     auto director = Director::getInstance();
     auto eglView = EGLView::getInstance();
 
+    static cocos2d::Size designResolutionSize = cocos2d::Size(540, 960);
+
     director->setOpenGLView(eglView);
+    eglView->setDesignResolutionSize(designResolutionSize.width,
+    		designResolutionSize.height, ResolutionPolicy::SHOW_ALL);
+
 	
     // turn on display FPS
     director->setDisplayStats(false);

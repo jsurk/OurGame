@@ -5,22 +5,38 @@
  *      Author: Mark
  */
 #include "Player.h"
+#include "Utils.h"
 
 bool Player::init()
 {
 	if (!Sprite::init()) {
 		return false;
 	}
-	this->setDisplayFram("player.png");
-	column = TOTAL_COLUMNS / 2 + 1;
-	playerArea = Rect::create(Utils::convertX(column), this->getDisplayFrame->height);
+
 	return true;
 }
+
+Player* Player::spriteWithFile(const char *pszFileName)
+{
+    Player *p = new Player();
+    if (p && p->initWithFile(pszFileName))
+    {
+    	p->column = TOTAL_COLUMNS / 2 + 1;
+    	auto bb = this->getBoundingBox();
+
+        p->autorelease();
+        return p;
+    }
+    CC_SAFE_DELETE(p);
+        return NULL;
+}
+
+
 
 // Handles what happens when the Player sprite is tapped
 void Player::wasTapped()
 {
-	// TBD
+
 }
 
 // Moves the player left
@@ -39,10 +55,4 @@ void Player::moveRight()
 		column++;
 		this->setPositionX(Utils::convertX(column));
 	}
-}
-
-// Returns the playerArea
-Rect* Player::getPlayerArea()
-{
-	return playerArea;
 }

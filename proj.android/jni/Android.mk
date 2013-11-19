@@ -10,6 +10,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
                    ../../Classes/Game.cpp \
                    ../../Classes/Player.cpp \
+                   ../../Classes/HUD.cpp \
                    ../../Classes/Utils.cpp
 
 

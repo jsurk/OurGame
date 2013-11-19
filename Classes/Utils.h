@@ -9,6 +9,8 @@
 #define UTILS_H_
 
 #include "cocos2d.h"
+#include "HUD.h"
+#include "Game.h"
 
 using namespace cocos2d;
 
@@ -30,6 +32,7 @@ public:
 	// Converts the given X column to a GL X coordinate based on screen size
 	static int convertX(int x);
 	// Returns the playerArea
+	static Rect* playerArea();
 };
 
 
