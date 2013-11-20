@@ -7,14 +7,15 @@
 
 #include "Projectiles.h"
 
-
-int INITIAL_SPEED = 1;
-int INITIAL_DMG = 1;
-float pArrowSpeed = 2;
+float dmg = 5;
+float pArrowSpeed = 5;
 
 float Projectiles::playerArrowSpeed()
 {
 	return pArrowSpeed;
 }
 
-
+float Projectiles::playerArrowDmg()
+{
+	return dmg;
+}

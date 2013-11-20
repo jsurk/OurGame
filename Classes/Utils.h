@@ -27,8 +27,6 @@ public:
 	static Layer* layerWithTag(int tag);
 	// Returns the screen size
 	static Size getSize();
-	// Scales a sprite based on the screen size
-	static void scaleSprite(Sprite* sprite);
 	// Converts the given X column to a GL X coordinate based on screen size
 	static int convertX(int x);
 	// Returns the playerArea

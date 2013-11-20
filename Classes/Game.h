@@ -16,7 +16,9 @@ using namespace cocos2d;
 class Game : public cocos2d::Layer
 {
 private:
-	float totalTime;
+	Array *playerArrows, *enemies;
+	int maxEnemies;
+	float totalTime, timeElapsed, enemyTimer;
 	Player* player;
 
 public:
@@ -26,9 +28,21 @@ public:
     // Initialized the game
     void initializeGame();
     // Ticks for every frame of the game. Default is 60/s
-    void tick(float dt);
+    virtual void update(float dt);
     // Handles touches
     virtual void onTouchesBegan(const std::vector<Touch*> &touches, Event * pEvent);
+    // Maybe fires an arrow
+    void fireArrow();
+    // Cleans up off-screen projectiles
+    void cleanUp();
+    // Spawns an enemy
+    void spawnEnemy();
+    // Checks if the projectiles collided with any enemies
+    void checkProjectileCollisions();
+    // Deletes dead enemies
+    void deleteDeadEnemies();
+    // Checks for attacking enemies
+    void checkEnemyAttacks();
 
     CREATE_FUNC(Game);
 };

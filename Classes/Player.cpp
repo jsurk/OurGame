@@ -27,7 +27,6 @@ Player* Player::spriteWithFile(const char *fileName)
     {
     	p->column = TOTAL_COLUMNS / 2 + 1;
     	p->maxArrows = INIT_MAX_ARROWS;
-    	p->arrows = Array::create();
         p->autorelease();
         return p;
     }
@@ -40,14 +39,7 @@ Player* Player::spriteWithFile(const char *fileName)
 // Handles what happens when the Player sprite is tapped
 void Player::wasTapped()
 {
-	log("tapped");
-	if (this->arrows->count() < this->maxArrows) {
-		auto arr = Sprite::create("arrow.png");
-//		a->setPosition(this->getPosition());
-//		Utils::layerWithTag(TAG_GAME_LAYER)->addChild(a, 0);
-//		this->arrows->addObject(a);
-//		auto act = MoveTo::create(Projectiles::playerArrowSpeed(), Point(a->getPositionX(), 980));
-	}
+
 }
 
 // Moves the player left

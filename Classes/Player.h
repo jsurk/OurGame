@@ -14,9 +14,6 @@ using namespace cocos2d;
 
 class Player : public Sprite
 {
-private:
-	Array *arrows;
-
 public:
 	int column, maxArrows;
 	virtual bool init();

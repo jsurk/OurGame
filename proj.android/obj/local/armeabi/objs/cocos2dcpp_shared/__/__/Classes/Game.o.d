@@ -1,5 +1,7 @@
 obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/Game.o: \
- jni/../../Classes/Game.cpp jni/../../Classes/Game.h \
+ jni/../../Classes/Game.cpp \
+ /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdlib \
+ jni/../../Classes/Game.h \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/include/cocos2d.h \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/include/ccConfig.h \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/platform/CCPlatformConfig.h \
@@ -17,10 +19,6 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/Game.o: \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/platform/CCPlatformMacros.h \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/platform/android/CCStdC.h \
  /Android/ndk/platforms/android-13/arch-arm/usr/include/math.h \
- /Android/ndk/platforms/android-13/arch-arm/usr/include/stdlib.h \
- /Android/ndk/platforms/android-13/arch-arm/usr/include/alloca.h \
- /Android/ndk/platforms/android-13/arch-arm/usr/include/strings.h \
- /Android/ndk/platforms/android-13/arch-arm/usr/include/memory.h \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/cocoa/CCGeometry.h \
  /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/functional \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/cocoa/CCObject.h \
@@ -182,7 +180,6 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/Game.o: \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/support/tinyxml2/tinyxml2.h \
  /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/climits \
  /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdio \
- /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdlib \
  /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring \
  /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdarg \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/text_input_node/CCIMEDelegate.h \
@@ -216,7 +213,11 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/Game.o: \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/include/CCDeprecated.h \
  jni/../../Classes/Player.h jni/../../Classes/Constants.h \
  jni/../../Classes/Projectiles.h jni/../../Classes/Utils.h \
- jni/../../Classes/HUD.h
+ jni/../../Classes/HUD.h jni/../../Classes/Units.h \
+ jni/../../Classes/EnemyKnight.h \
+ /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iomanip
+
+/Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdlib:
 
 jni/../../Classes/Game.h:
 
@@ -253,14 +254,6 @@ jni/../../Classes/Game.h:
 /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/platform/android/CCStdC.h:
 
 /Android/ndk/platforms/android-13/arch-arm/usr/include/math.h:
-
-/Android/ndk/platforms/android-13/arch-arm/usr/include/stdlib.h:
-
-/Android/ndk/platforms/android-13/arch-arm/usr/include/alloca.h:
-
-/Android/ndk/platforms/android-13/arch-arm/usr/include/strings.h:
-
-/Android/ndk/platforms/android-13/arch-arm/usr/include/memory.h:
 
 /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/cocoa/CCGeometry.h:
 
@@ -584,8 +577,6 @@ jni/../../Classes/Game.h:
 
 /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdio:
 
-/Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdlib:
-
 /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring:
 
 /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdarg:
@@ -657,3 +648,9 @@ jni/../../Classes/Projectiles.h:
 jni/../../Classes/Utils.h:
 
 jni/../../Classes/HUD.h:
+
+jni/../../Classes/Units.h:
+
+jni/../../Classes/EnemyKnight.h:
+
+/Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iomanip:

@@ -14,6 +14,7 @@ class Projectiles
 {
 public:
 	static float playerArrowSpeed();
+	static float playerArrowDmg();
 };
 
 

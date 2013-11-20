@@ -38,15 +38,6 @@ Size Utils::getSize()
 	return Director::getInstance()->getWinSize();
 }
 
-// Scales a sprite based on the size of the screen
-void Utils::scaleSprite(Sprite* sprite)
-{
-    float rX = Utils::getSize().width / sprite->getContentSize().width;
-	float rY = Utils::getSize().height / sprite->getContentSize().height;
-	sprite->setScaleX(rX);
-	sprite->setScaleY(rY);
-}
-
 // Converts the given X column to a GL X coordinate based on screen size
 int Utils::convertX(int x)
 {
