@@ -10,14 +10,16 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
                    ../../Classes/Game.cpp \
                    ../../Classes/Player.cpp \
-                   ../../Classes/HUD.cpp \
+                   ../../Classes/Menus/HUD.cpp \
                    ../../Classes/Projectiles.cpp \
-                   ../../Classes/Units.cpp \
-                   ../../Classes/EnemyKnight.cpp \
+                   ../../Classes/Enemies/EnemyKnight.cpp \
+                   ../../Classes/Enemies/Enemy.cpp \
                    ../../Classes/Utils.cpp
 
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
+					$(LOCAL_PATH)/../../Classes/Enemies \
+					$(LOCAL_PATH)/../../Classes/Menus
 
 LOCAL_WHOLE_STATIC_LIBRARIES += cocos2dx_static
 LOCAL_WHOLE_STATIC_LIBRARIES += cocosdenshion_static

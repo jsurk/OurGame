@@ -8,7 +8,7 @@
 #ifndef CONSTANTS_H_
 #define CONSTANTS_H_
 
-#define FONT_MAIN "ARIAL"
+#define FONT_MAIN "Normal"
 static const int TOTAL_COLUMNS = 9;
 
 typedef enum {
@@ -17,6 +17,7 @@ typedef enum {
     TAG_GAME_SCENE,
     TAG_PAUSE,
     TAG_GAMEOVER,
+    KNIGHT,
 } tags;
 
 #endif /* CONSTANTS_H_ */

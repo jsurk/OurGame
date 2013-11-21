@@ -9,29 +9,29 @@
 #define ENEMYKNIGHT_H_
 
 #include "cocos2d.h"
+#include "Enemy.h"
+#include "Constants.h"
 using namespace cocos2d;
 
-
-class EnemyKnight : public Sprite
+class EnemyKnight : public Enemy
 {
 private:
-	float health;
-	float attack;
+	static float atk, speed, maxHealth, atkTimer;
+
 public:
 	virtual bool init();
-
-	static EnemyKnight* spriteWithFile(const char *fileName);
-	// Returns the health
-	float getHealth();
-	// Reduces health by given amount
-	void takeDmg(float dmg);
 	// Grabs the speed
 	float getSpeed();
 	// Gets attack
 	float getAttack();
+	// Creates an EnemyKnight
+	static Enemy* createKnight();
+	// Called when an enemy attacks
+	void attack(float t);
+	// Called when an enemy dies
+	void died();
 
 	CREATE_FUNC(EnemyKnight);
 };
-
 
 #endif /* ENEMYKNIGHT_H_ */

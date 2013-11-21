@@ -213,8 +213,8 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/Game.o: \
  /Android/cocos2d-x/projects/OurGame/proj.android/../../../cocos2dx/include/CCDeprecated.h \
  jni/../../Classes/Player.h jni/../../Classes/Constants.h \
  jni/../../Classes/Projectiles.h jni/../../Classes/Utils.h \
- jni/../../Classes/HUD.h jni/../../Classes/Units.h \
- jni/../../Classes/EnemyKnight.h \
+ jni/../../Classes/HUD.h jni/../../Classes/EnemyKnight.h \
+ jni/../../Classes/Enemy.h \
  /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iomanip
 
 /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/cstdlib:
@@ -649,8 +649,8 @@ jni/../../Classes/Utils.h:
 
 jni/../../Classes/HUD.h:
 
-jni/../../Classes/Units.h:
-
 jni/../../Classes/EnemyKnight.h:
+
+jni/../../Classes/Enemy.h:
 
 /Android/ndk/sources/cxx-stl/gnu-libstdc++/4.8/include/iomanip:

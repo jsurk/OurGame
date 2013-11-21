@@ -10,7 +10,6 @@
 #include "Utils.h"
 #include "Constants.h"
 #include "HUD.h"
-#include "Units.h"
 #include "EnemyKnight.h"
 #include <iomanip>
 #include <locale>
@@ -74,8 +73,8 @@ Scene* Game::createScene()
 	scene->setTag(TAG_GAME_SCENE);
 	auto g = Game::create();
 	scene->addChild(g, 0, TAG_GAME_LAYER);
-	//auto h = HUD::create();
-	//scene->addChild(h, 1, TAG_HUD);
+	auto h = HUD::create();
+	scene->addChild(h, 3, TAG_HUD);
 	return scene;
 }
 
@@ -121,7 +120,7 @@ void Game::onTouchesBegan(const std::vector<Touch*> &touches, Event * pEvent)
 	}
 }
 
-// Checks for projectile colliwions
+// Checks for projectile collisions
 void Game::checkProjectileCollisions()
 {
     Object* it = NULL;
@@ -131,7 +130,7 @@ void Game::checkProjectileCollisions()
 	CCARRAY_FOREACH(playerArrows, it) {
 		Sprite *ar = dynamic_cast<Sprite*>(it);
 		CCARRAY_FOREACH(enemies, jt) {
-			EnemyKnight *e = dynamic_cast<EnemyKnight*>(jt);
+			Enemy *e = dynamic_cast<Enemy*>(jt);
 			if (ar->getBoundingBox().intersectsRect(e->getBoundingBox())) {
 				e->takeDmg(Projectiles::playerArrowDmg());
 				arrowsToDelete->addObject(ar);
@@ -174,7 +173,7 @@ void Game::cleanUp()
 // Spawns an enemy at a random location
 void Game::spawnEnemy()
 {
-	auto e = EnemyKnight::spriteWithFile("enemy.png");
+	Enemy* e = (Enemy*) Enemy::createEnemy(KNIGHT);
 	e->setTag(2);
 	int x = rand() % 7 + 2;
 	e->setPosition(Point(Utils::convertX(x), Utils::getSize().height + e->getContentSize().height / 2));
@@ -203,14 +202,15 @@ void Game::deleteDeadEnemies()
     Array* enemiesToDelete = Array::create();
 
     CCARRAY_FOREACH(enemies, it) {
-		EnemyKnight *e = dynamic_cast<EnemyKnight*>(it);
-		if (e->getHealth() <= 0) {
+		Enemy *e = dynamic_cast<Enemy*>(it);
+		if (e->isDead()) {
 			enemiesToDelete->addObject(e);
 		}
     }
 
     CCARRAY_FOREACH(enemiesToDelete, it) {
-		EnemyKnight *e = dynamic_cast<EnemyKnight*>(it);
+		Enemy *e = dynamic_cast<Enemy*>(it);
+		e->died();
 		enemies->removeObject(e);
 		this->removeChild(e, true);
     }
@@ -223,9 +223,9 @@ void Game::checkEnemyAttacks()
 {
 	Object* it = NULL;
 	CCARRAY_FOREACH(enemies, it) {
-		EnemyKnight *e = dynamic_cast<EnemyKnight*>(it);
+		Enemy *e = dynamic_cast<Enemy*>(it);
 		if(e->getPositionY() == 180) {
-			// Does something
+			e->attack(totalTime);
 		}
 	}
 }
