@@ -7,5 +7,6 @@ OurGame
 this is code?
 ```
 
-[x] task list?
-- [ ] or this?
+[x] not a list?
+
+i still dont get it
