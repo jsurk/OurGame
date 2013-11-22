@@ -35,6 +35,8 @@ bool GameOver::init()
     menu->alignItemsVerticallyWithPadding(30);
     this->addChild(menu, 1);
 
+    this->setVisible(false);
+
     return true;
 }
 
