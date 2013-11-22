@@ -217,7 +217,7 @@ obj/local/armeabi/objs/cocos2dcpp_shared/__/__/Classes/Menus/GameOver.o: \
  jni/../../Classes/Constants.h jni/../../Classes/Utils.h \
  jni/../../Classes/HUD.h jni/../../Classes/Game.h \
  jni/../../Classes/Player.h jni/../../Classes/Constants.h \
- jni/../../Classes/Projectiles.h
+ jni/../../Classes/Projectiles.h jni/../../Classes/MainMenu.h
 
 jni/../../Classes/GameOver.h:
 
@@ -662,3 +662,5 @@ jni/../../Classes/Player.h:
 jni/../../Classes/Constants.h:
 
 jni/../../Classes/Projectiles.h:
+
+jni/../../Classes/MainMenu.h:

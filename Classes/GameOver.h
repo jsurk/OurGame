@@ -19,6 +19,8 @@ public:
 	void show(bool shouldShow);
 	// Called when the replay button is hit
 	void replay();
+	// Opens the mainMenu
+	void mainMenu();
 
 	CREATE_FUNC(GameOver);
 };

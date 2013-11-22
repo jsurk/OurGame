@@ -14,6 +14,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/GameClasses/Utils.cpp \
                    ../../Classes/Menus/HUD.cpp \
                    ../../Classes/Menus/GameOver.cpp \
+                   ../../Classes/Menus/MainMenu.cpp \
                    ../../Classes/Enemies/EnemyKnight.cpp \
                    ../../Classes/Enemies/Enemy.cpp 
 
