@@ -10,8 +10,8 @@
 #include "HUD.h"
 
 float EnemyKnight::maxHealth = 10;
-float EnemyKnight::speed = 10;
-float EnemyKnight::atk = 3;
+float EnemyKnight::speed = 5.0;
+float EnemyKnight::atk = 10;
 float EnemyKnight::atkTimer = 3;
 
 
@@ -47,7 +47,7 @@ void EnemyKnight::died()
 void EnemyKnight::attack(float t)
 {
 	if(t - lastAtk >= atkTimer) {
-		Utils::hudLayer()->subScore(atk);
+		Utils::hudLayer()->subHP(atk);
 		lastAtk = t;
 	}
 }

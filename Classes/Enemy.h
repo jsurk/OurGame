@@ -17,7 +17,7 @@ protected:
 	float health, lastAtk;
 
 public:
-	virtual bool init();
+	bool init();
 	// Creates an enemy with a file
 	static Sprite* createEnemy(int tag);
 	// Gets the speed of the enemy

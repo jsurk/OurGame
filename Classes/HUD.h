@@ -17,15 +17,19 @@ private:
 	// There are plans to implement a better resource system than
 	// just "score", but this is it for now
 	int score;
+	float maxHealth, currentHealth;
 	LabelTTF* scoreLabel;
+	Sprite* hpBar;
 public:
-    virtual bool init();
+    bool init();
     // Adds to the score;
     void addScore(int i);
     // Subtracts from the score
     void subScore(int i);
     // Gets the score
     int getScore();
+    // Causes the player to take damage
+    void subHP(float f);
 
     CREATE_FUNC(HUD);
 };

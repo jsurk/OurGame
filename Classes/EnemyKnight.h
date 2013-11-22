@@ -19,7 +19,7 @@ private:
 	static float atk, speed, maxHealth, atkTimer;
 
 public:
-	virtual bool init();
+	bool init();
 	// Grabs the speed
 	float getSpeed();
 	// Gets attack

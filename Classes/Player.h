@@ -16,9 +16,9 @@ class Player : public Sprite
 {
 public:
 	int column, maxArrows;
-	virtual bool init();
+	bool init();
 
-	Player* spriteWithFile(const char *fileName);
+	static Player* spriteWithFile(const char *fileName);
 
 	// Called when the player is tapped
 	void wasTapped();

@@ -8,6 +8,7 @@
 #include "HUD.h"
 #include "Constants.h"
 #include "Utils.h"
+#include "GameOver.h"
 
 bool HUD::init()
 {
@@ -16,16 +17,27 @@ bool HUD::init()
         return false;
     }
 
+
+
     // Initializes the score
     score = 0;
-    float scoreX = 10;
-    float scoreY = Utils::getSize().height - 10;
-    scoreLabel = LabelTTF::create("0", "fonts/Marker Felt.ttf", 50);
+    scoreLabel = LabelTTF::create("0", String::createWithFormat("%s.ttf", FONT_MAIN)->getCString(), 50);
     scoreLabel->setAnchorPoint(Point(0, 1));
-    scoreLabel->setPosition(Point(scoreX, scoreY));
+    Point scoreLoc = Point(10, DESIGN_HEIGHT - 10);
+    scoreLabel->setPosition(scoreLoc);
     this->addChild(scoreLabel, 1);
-    return true;
 
+    // Initializes the health bar
+    maxHealth = 100;
+    currentHealth = 100;
+
+    hpBar = Sprite::create("hp_bar.png");
+    hpBar->setAnchorPoint(Point(1, .5));
+    Point hpBarLoc = Point(DESIGN_WIDTH - 10, hpBar->getContentSize().height / 2 + 10);
+    hpBar->setPosition(hpBarLoc);
+    this->addChild(hpBar, 1);
+
+    return true;
 }
 
 // Subtracts from the score and updates the label
@@ -43,4 +55,15 @@ void HUD::addScore(int i)
 {
 	score += i;
 	scoreLabel->setString(String::createWithFormat("%d", score)->getCString());
+}
+
+// Subtracts from the player hp
+void HUD::subHP(float f)
+{
+	currentHealth -= f;
+	if (currentHealth <= 0) {
+		((GameOver*) Utils::layerWithTag(TAG_GAMEOVER))->show(true);
+		currentHealth = 0;
+	}
+	hpBar->setScaleX(currentHealth / maxHealth);
 }

@@ -7,14 +7,16 @@ LOCAL_MODULE := cocos2dcpp_shared
 LOCAL_MODULE_FILENAME := libcocos2dcpp
 
 LOCAL_SRC_FILES := hellocpp/main.cpp \
-                   ../../Classes/AppDelegate.cpp \
-                   ../../Classes/Game.cpp \
-                   ../../Classes/Player.cpp \
+                   ../../Classes/GameClasses/AppDelegate.cpp \
+                   ../../Classes/GameClasses/Game.cpp \
+                   ../../Classes/GameClasses/Player.cpp \
+				   ../../Classes/GameClasses/Projectiles.cpp \
+                   ../../Classes/GameClasses/Utils.cpp \
                    ../../Classes/Menus/HUD.cpp \
-                   ../../Classes/Projectiles.cpp \
+                   ../../Classes/Menus/GameOver.cpp \
                    ../../Classes/Enemies/EnemyKnight.cpp \
-                   ../../Classes/Enemies/Enemy.cpp \
-                   ../../Classes/Utils.cpp
+                   ../../Classes/Enemies/Enemy.cpp 
+
 
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \

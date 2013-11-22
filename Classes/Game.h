@@ -24,7 +24,7 @@ private:
 public:
     // Creates the scene
     static cocos2d::Scene* createScene();
-    virtual bool init();
+    bool init();
     // Initialized the game
     void initializeGame();
     // Ticks for every frame of the game. Default is 60/s
