@@ -190,7 +190,8 @@ void Game::spawnEnemy()
 void Game::fireArrow()
 {
 	auto a = Sprite::create("arrow.png");
-	a->setPosition(player->getPosition());
+	auto playerPos = player->getPosition();
+	a->setPosition(Point(playerPos.x, playerPos.y + 105));
 	playerArrows->addObject(a);
 	this->addChild(a, 1);
 	a->setTag(1);

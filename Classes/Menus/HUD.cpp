@@ -17,13 +17,17 @@ bool HUD::init()
         return false;
     }
 
+    //Creates the HUD bar
+    auto hudBar = Sprite::create("HUD_bar.png");
+    hudBar->setPosition(Point(DESIGN_WIDTH / 2, DESIGN_HEIGHT - hudBar->getContentSize().height / 2));
+    this->addChild(hudBar, -1);
 
 
     // Initializes the score
     score = 0;
     scoreLabel = LabelTTF::create("0", String::createWithFormat("%s.ttf", FONT_MAIN)->getCString(), 50);
     scoreLabel->setAnchorPoint(Point(0, 1));
-    Point scoreLoc = Point(10, DESIGN_HEIGHT - 10);
+    Point scoreLoc = Point(10, DESIGN_HEIGHT - 7);
     scoreLabel->setPosition(scoreLoc);
     this->addChild(scoreLabel, 1);
 
@@ -33,7 +37,7 @@ bool HUD::init()
 
     hpBar = Sprite::create("hp_bar.png");
     hpBar->setAnchorPoint(Point(1, .5));
-    Point hpBarLoc = Point(DESIGN_WIDTH - 10, hpBar->getContentSize().height / 2 + 10);
+    Point hpBarLoc = Point(DESIGN_WIDTH - 15, DESIGN_HEIGHT - hudBar->getContentSize().height / 2);
     hpBar->setPosition(hpBarLoc);
     this->addChild(hpBar, 1);
 

@@ -20,6 +20,7 @@ typedef enum {
     TAG_PAUSE,
     TAG_GAMEOVER,
     KNIGHT,
+    TESTENEMY,
 } tags;
 
 #endif /* CONSTANTS_H_ */
